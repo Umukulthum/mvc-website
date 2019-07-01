@@ -33,3 +33,4 @@ C:\Users\kanyi\source\repos\Sports\Sports\obj\Debug\netcoreapp2.2\Razor\Views\Pr
 C:\Users\kanyi\source\repos\Sports\Sports\obj\Debug\netcoreapp2.2\Razor\Views\Auth\Login.g.cshtml.cs
 C:\Users\kanyi\source\repos\Sports\Sports\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AuthLayout.g.cshtml.cs
 C:\Users\kanyi\source\repos\Sports\Sports\obj\Debug\netcoreapp2.2\Razor\Areas\Admins\Views\Home\Index.g.cshtml.cs
+C:\Users\kanyi\source\repos\Sports\Sports\obj\Debug\netcoreapp2.2\Razor\Areas\CustomerArea\Views\Home\Index.g.cshtml.cs

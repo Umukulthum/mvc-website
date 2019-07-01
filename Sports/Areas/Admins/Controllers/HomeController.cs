@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Sports.Areas.AdminArea.Controllers
 {
-    //[Area("Admins")]
+    [Area("Admins")]
     public class HomeController : Controller
     {
         public IActionResult Index()

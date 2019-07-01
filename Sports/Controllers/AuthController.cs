@@ -12,6 +12,9 @@ namespace Sports.Controllers
     {
         private readonly string Username = "Admin";
         private readonly string Password = "admin";
+        private readonly string CusUsername = "Cus";
+        private readonly string CusPassword = "cus";
+
         // GET: /<controller>/
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
@@ -24,22 +27,52 @@ namespace Sports.Controllers
                 return View(model);
             }
             if (!Username.Equals(model.Username, StringComparison.InvariantCultureIgnoreCase) ||
-                !Password.Equals(model.Password))
+                   !Password.Equals(model.Password))
             {
-                TempData["Failed"] = "failed";
-                ModelState.AddModelError("Error", "Username or Password is invalid");
-                return View(model);
-            }
-            //return Redirect("~/Protected/Index");
-            return RedirectToAction("Index", "Home", new { area = "Admins" });
-            //return RedirectToAction("Index", "Protected");
-        }
+                 AdminLogin(model);
+                
 
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home", new { area = "Admins" });
+            }
+            if (!CusUsername.Equals(model.Username, StringComparison.InvariantCultureIgnoreCase) ||
+                   !CusPassword.Equals(model.Password))
+            {
+                Cuslogin(model);
+                
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home", new { area = "CustomerArea" });
+            }
+            return View(model);
+         
+        }
         [HttpGet]
         public IActionResult Login()
         {
             var loginModel = new LoginViewModel();
             return View(loginModel);
         }
+
+        public IActionResult Cuslogin(LoginViewModel model)
+        { 
+                TempData["Failed"] = "failed";
+                ModelState.AddModelError("Error", "Username or Password is invalid");
+                return View(model);    
+        }
+
+        public IActionResult AdminLogin(LoginViewModel model)
+            {
+               
+                    TempData["Failed"] = "failed";
+                    ModelState.AddModelError("Error", "Username or Password is invalid");
+                    return View(model);
+                //return Redirect("~/Protected/Index");   
+                //return RedirectToAction("Index", "Protected");
+            }
+  
     }
 }

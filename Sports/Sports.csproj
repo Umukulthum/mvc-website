@@ -2965,10 +2965,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admins\Models\" />
-    <Folder Include="Areas\CustomerArea\Controllers\" />
     <Folder Include="Areas\CustomerArea\Data\" />
     <Folder Include="Areas\CustomerArea\Models\" />
-    <Folder Include="Areas\CustomerArea\Views\" />
   </ItemGroup>
 
 </Project>
