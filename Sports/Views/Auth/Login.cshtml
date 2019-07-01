@@ -1,0 +1,50 @@
+﻿@model  LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_AuthLayout";
+}
+
+
+
+    <div class="container">
+        <div class="card-top"></div>
+        <div class="card">
+            <h1 class="title"><span>Sports</span>Login <span class="msg">Sign in to start your session</span></h1>
+            <div class="col-sm-12">
+                <form id="sign_in" method="POST" asp-action="Login">
+                    @if (TempData["Failed"] != null)
+                    {
+                        <div class="alert-warning" asp-validation-summary="All"></div>
+                    }
+                    <div class="input-group">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus value="@Model.Username">
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required value="@Model.Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                        <label for="rememberme">Remember Me</label>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-raised waves-effect g-bg-blush2">SIGN IN</button>
+                        <button  class="btn btn-raised waves-effect">SIGN UP</button>
+                    </div>
+                    <div class="text-center"> <a href="#">Forgot Password?</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="theme-bg"></div>
+    <!-- Jquery Core Js -->
+    <script src="~/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+    <script src="~/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+    <script src="~/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
